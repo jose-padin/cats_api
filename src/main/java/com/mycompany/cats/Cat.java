@@ -9,11 +9,52 @@ import io.github.cdimascio.dotenv.Dotenv;
  * @author jose
  */
 public class Cat {
+
+    public Cat() {}
+
+    public Cat(String id, String url) {
+        this.id = id;
+        this.url = url;
+    }
+
     Dotenv dotenv = Dotenv.load();
-    int id;
-// TODO: store the api key in a safe place
-//    String api_key = "82c59816-cbce-4c7b-8fbf-9308b701ae5d";
-    String api_key = dotenv.get("CAT_API_KEY");
-    String image;
-    String url;
+
+    private String id;
+    private String api_key = dotenv.get("CAT_API_KEY");
+    private String image;
+    private String url;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getApi_key() {
+        return api_key;
+    }
+
+    public void setApi_key(String api_key) {
+        this.api_key = api_key;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+
 }

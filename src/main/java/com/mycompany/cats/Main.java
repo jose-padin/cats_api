@@ -1,16 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.cats;
-import java.util.Map;
+
+import java.io.IOException;
+import javax.swing.JOptionPane;
 /**
  *
  * @author jose
  */
 public class Main {
     public static void main(String[] args) {
-        Cat c = new Cat();
-        System.out.println(c.api_key);
+        String[] options = {"See cat", "Exit"};
+        int option = JOptionPane.showOptionDialog(
+            null,
+            "Select an option",
+            "",
+            JOptionPane.DEFAULT_OPTION,
+            JOptionPane.INFORMATION_MESSAGE,
+            null,
+            options,
+            options[0]
+        );
+        
+        if (option == 0) {
+            try {
+                CatService.getCat();
+            } catch(IOException e) {
+                System.out.println(e);
+            }
+        }
+
+        if (option == 1) {
+            System.out.println("Good bye");
+        }
     }
 }

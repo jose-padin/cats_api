@@ -34,3 +34,6 @@ nb-configuration.xml
 # VSCode
 .vscode/
 .code-workspace
+
+# IntelliJ
+.idea
